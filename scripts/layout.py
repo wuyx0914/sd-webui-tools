@@ -24,6 +24,8 @@ def on_ui_tabs():
                     def batch_rename_files(origin_dir_path: str, target_dir_path: str):
                         if not path.isdir(origin_dir_path):
                             return
+                        if target_dir_path == "":
+                            target_dir_path = origin_dir_path
                         if not path.isdir(target_dir_path):
                             Path(target_dir_path).mkdir(0o777, True, True)
 
